@@ -1,0 +1,361 @@
+<!doctype html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>网站后台管理中心- Powered by 74cms.com</title>
+    <link rel="shortcut icon" href="../../upload/favicon.ico"/>
+    <meta name="author" content="骑士CMS"/>
+    <meta name="copyright" content="74cms.com"/>
+    <link href="../../upload/Application/Admin/View/default/public/css/common.css" rel="stylesheet" type="text/css">
+    <script src="../../upload/Application/Admin/View/default/public/js/jquery.min.js"></script>
+    <script src="../../upload/Application/Admin/View/default/public/js/jquery.highlight-3.js"></script>
+    <script src="../../upload/Application/Admin/View/default/public/js/jquery.vtip-min.js"></script>
+    <script src="../../upload/Application/Admin/View/default/public/js/jquery.modal.dialog.js"></script>
+    <script src="../../upload/Application/Admin/View/default/public/js/jquery.disappear.tooltip.js"></script>
+    <script src="../../upload/Application/Admin/View/default/public/js/vue.min.js"></script>
+    <script>
+        var URL = '/74cms_v4.2.111/upload/index.php/admin/jobs',
+            SELF = '/74cms_v4.2.111/upload/index.php?m=admin&amp;c=jobs&amp;a=index&amp;menu_id=194&amp;sub_menu_id=195',
+            ROOT_PATH = '/74cms_v4.2.111/upload/index.php/admin',
+            APP = '/74cms_v4.2.111/upload/index.php';
+
+        var qscms = {
+            is_subsite: 0,
+            subsite_level: "3",
+            default_district: ""
+        };
+    </script>
+</head>
+<body>
+
+<!-- public:header 以上内容 -->
+<div class="allpagetop">企业<strong>/</strong>职位管理</div>
+<div class="mains">
+    <div class="h1tit">
+        <div class="h1">
+            职位管理
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="toptip">
+        <div class="toptit">提示：</div>
+        <p>有效职位是指：审核通过、审核中、服务未到期等网站能正常显示的职位。</p>
+        <p>无效职位是指：审核未通过、服务到期等网站前台不显示的职位。</p>
+    </div>
+    <div class="seltpye_y">
+        <div class="tit">有效状态</div>
+        <div class="ct">
+            <div class="txt ">有效职位</div>
+        </div>
+        <div class="downlist">
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&jobtype=1&jobtype_cn=%E6%9C%89%E6%95%88%E8%81%8C%E4%BD%8D">
+                有效职位<span>(0)</span></li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&jobtype=2&jobtype_cn=%E6%97%A0%E6%95%88%E8%81%8C%E4%BD%8D">
+                无效职位<span>(0)</span></li>
+        </div>
+    </div>
+    <div class="seltpye_y">
+        <div class="tit">审核状态</div>
+        <div class="ct">
+            <div class="txt ">不限</div>
+        </div>
+        <div class="downlist">
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&audit=0&audit_cn=%E4%B8%8D%E9%99%90">不限
+            </li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&audit=2&audit_cn=%E7%AD%89%E5%BE%85%E5%AE%A1%E6%A0%B8">
+                等待审核
+            </li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&audit=1&audit_cn=%E5%AE%A1%E6%A0%B8%E9%80%9A%E8%BF%87">
+                审核通过<span>(0)</span></li>
+            <li title="审核未通过"
+                url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&audit=3&audit_cn=%E5%AE%A1%E6%A0%B8%E6%9C%AA%E9%80%9A%E8%BF%87">
+                审核未通过<span>(0)</span></li>
+        </div>
+    </div>
+    <div class="seltpye_y">
+        <div class="tit">服务到期</div>
+        <div class="ct">
+            <div class="txt ">不限</div>
+        </div>
+        <div class="downlist">
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&deadline=&deadline_cn=%E4%B8%8D%E9%99%90">
+                不限
+            </li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&deadline=3&deadline_cn=%E4%B8%89%E5%A4%A9%E5%86%85">
+                三天内
+            </li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&deadline=7&deadline_cn=%E4%B8%80%E5%91%A8%E5%86%85">
+                一周内
+            </li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&deadline=30&deadline_cn=%E4%B8%80%E6%9C%88%E5%86%85">
+                一月内
+            </li>
+        </div>
+    </div>
+    <div class="seltpye_y">
+        <div class="tit">推广类型</div>
+        <div class="ct">
+            <div class="txt ">不限</div>
+        </div>
+        <div class="downlist">
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&promote=&promote_cn=%E4%B8%8D%E9%99%90">
+                不限
+            </li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&promote=-1&promote_cn=%E6%9C%AA%E6%8E%A8%E5%B9%BF">
+                未推广
+            </li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&promote=1&promote_cn=%E7%BD%AE%E9%A1%B6">
+                置顶
+            </li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&promote=2&promote_cn=%E7%B4%A7%E6%80%A5">
+                紧急
+            </li>
+        </div>
+    </div>
+    <div class="seltpye_y">
+        <div class="tit">添加时间</div>
+        <div class="ct">
+            <div class="txt ">不限</div>
+        </div>
+        <div class="downlist">
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&addsettr=&addsettr_cn=%E4%B8%8D%E9%99%90">
+                不限
+            </li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&addsettr=3&addsettr_cn=%E4%B8%89%E5%A4%A9%E5%86%85">
+                三天内
+            </li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&addsettr=7&addsettr_cn=%E4%B8%80%E5%91%A8%E5%86%85">
+                一周内
+            </li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&addsettr=30&addsettr_cn=%E4%B8%80%E6%9C%88%E5%86%85">
+                一月内
+            </li>
+        </div>
+    </div>
+    <div class="seltpye_y">
+        <div class="tit">刷新时间</div>
+        <div class="ct">
+            <div class="txt ">不限</div>
+        </div>
+        <div class="downlist">
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&settr=&settr_cn=%E4%B8%8D%E9%99%90">不限</li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&settr=3&settr_cn=%E4%B8%89%E5%A4%A9%E5%86%85">
+                三天内
+            </li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&settr=7&settr_cn=%E4%B8%80%E5%91%A8%E5%86%85">
+                一周内
+            </li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&settr=30&settr_cn=%E4%B8%80%E6%9C%88%E5%86%85">
+                一月内
+            </li>
+        </div>
+    </div>
+    <div class="seltpye_y">
+        <div class="tit">排序方式</div>
+        <div class="ct">
+            <div class="txt ">发布时间</div>
+        </div>
+        <div class="downlist">
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&orderby=addtime&orderby_cn=%E5%8F%91%E5%B8%83%E6%97%B6%E9%97%B4">
+                发布时间
+            </li>
+            <li url="/74cms_v4.2.111/upload/index.php?m=admin&c=jobs&a=index&orderby=refreshtime&orderby_cn=%E5%88%B7%E6%96%B0%E6%97%B6%E9%97%B4">
+                刷新时间
+            </li>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="jobList" style="height: 100%" class="pages list_th ">
+            <table  style="width: 100%;" cellpadding="0" cellspacing="0">
+                <thead>
+                <!--<div class="list_th">-->
+                    <tr>
+                        <td>
+                            <div class="td" style=" width:120px;">
+                                <label id="chkAll" class="left_padding">
+                                    <input type="checkbox" name="chkAll" id="chk" title="全选/反选"/>id
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td center" style=" width:200px;">职位名称</div>
+                        </td>
+                        <td>
+                            <div class="td center" style=" width:200px;">公司名称</div>
+                        </td>
+                        <td>
+                            <div class="td center" style=" width:100px;">审核状态&nbsp;&nbsp;&nbsp;</div>
+                        </td>
+                        <td>
+                            <div class="td center" style=" width:200px;">发布时间</div>
+                        </td>
+                        <td>
+                            <div class="td center" style=" width:200px;">刷新时间</div>
+                        </td>
+                        <td>
+                            <div class="td center" style=" width:250px;">操作</div>
+                        </td>
+                        <td>
+                            <div class="clear"></div>
+                        </td>
+                    </tr>
+                <!--</div>-->
+                </thead>
+                <tbody>
+                <!--<div class="list_tr link_black" v-for="job in jobList" v-if="jobList">-->
+                    <tr v-for="job in jobList" style="background: #fff;">
+                        <td>
+                            <div class="td" style=" width:120px;">
+                                <div class="left_padding striking">
+                                    <input name="tuid[]" type="checkbox" id="id" value="1"/>{{job.id}}
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td center" style=" width:200px;">{{job.jobName}}</div>
+                        </td>
+                        <td>
+                            <div class="td center" style=" width:200px;">{{job.companyName}}</div>
+                        </td>
+                        <td>
+                            <div class="td center" style=" width:100px;">{{job.status}}</div>
+                        </td>
+                        <td>
+                            <div class="td center" style=" width:200px;">{{job.pubTime}}</div>
+                        </td>
+                        <td>
+                            <div class="td center" style=" width:200px;">{{job.refreshTime}}</div>
+
+                        </td>
+                        <td>
+                            <div class="td center" style=" width:250px;">
+                                <a href="javascript:void(0);" class="business" v-on:click="del(job.id)">删除</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="clear"></div>
+                        </td>
+                    </tr>
+                <!--</div>-->
+                </tbody>
+            </table>
+            <!--<div class="list_th">
+                <div class="td" style=" width:100px;">
+                    <label id="chkAll" class="left_padding">
+                        <input type="checkbox" name="chkAll" id="chk" title="全选/反选"/>id
+                    </label>
+                </div>
+                <div class="td center" style=" width:200px;">职位名称</div>
+                <div class="td center" style=" width:200px;">公司名称</div>
+                <div class="td center" style=" width:100px;">审核状态&nbsp;&nbsp;&nbsp;</div>
+                <div class="td center" style=" width:200px;">发布时间</div>
+                <div class="td center" style=" width:200px;">刷新时间</div>
+                <div class="td center" style=" width:250px;">操作</div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="list_tr link_black" v-for="job in jobList" v-if="jobList">
+                <div class="td" style=" width:100px;">
+                    <div class="left_padding striking">
+                        <input name="tuid[]" type="checkbox" id="id" value="1"/>{{job.id}}
+                    </div>
+                </div>
+                <div class="td center" style=" width:200px;">{{job.jobName}}</div>
+                <div class="td center" style=" width:200px;">{{job.companyName}}</div>
+                <div class="td center" style=" width:100px;">{{job.status}}</div>
+                <div class="td center" style=" width:200px;">{{job.pubTime}}</div>
+                <div class="td center" style=" width:200px;">{{job.refreshTime}}</div>
+                <div class="td center" style=" width:250px;">
+                    <a href="javascript:void(0);" class="business" v-on:click="del(job.id)">删除</a>
+                </div>
+                <div class="clear"></div>
+
+            </div>
+            <div class="list_tr link_black" v-else>没有任何信息！</div>-->
+    </div>
+
+    <div class="list_foot">
+        <div class="btnbox">
+            <input type="button" class="admin_submit" id="ButAudit" value="审核"/>
+            <input type="button" class="admin_submit" id="ButRefresh" value="刷新"/>
+            <input type="button" class="admin_submit" id="ButDel" value="删除"/>
+        </div>
+
+        <div class="footso">
+            <form action="?" method="get">
+                <div class="sobox">
+                    <input type="hidden" name="m" value="Admin">
+                    <input type="hidden" name="c" value="Jobs">
+                    <input type="hidden" name="a" value="index">
+                    <input name="key" type="text" class="sinput" value=""/>
+                    <input name="key_type" id="J_key_type_id" type="hidden" value="1"/>
+                    <input name="key_type_cn" id="J_key_type_cn" type="hidden" value="职位名"/>
+                    <input name="" type="submit" value="" class="sobtn"/>
+                    <div class="sotype" id="J_key_click">职位名</div>
+                    <div class="mlist" id="J_mlist">
+                        <ul>
+                            <li id="1" title="职位名">职位名</li>
+                            <li id="2" title="公司名">公司名</li>
+                            <li id="3" title="职位ID">职位ID</li>
+                            <li id="4" title="公司ID">公司ID</li>
+                            <li id="5" title="会员ID">会员ID</li>
+                            <li id="6" title="手机号">手机号</li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="pages"></div>
+
+</div>
+<!-- public:footer 以下内容 -->
+<div class="footer link_blue">
+    Powered by <a href="http://www.74cms.com" target="_blank"><span style="color:#009900">74</span><span
+        style="color: #FF3300">cms</span></a> v4.2.111
+</div>
+<!-- public:footer 以上内容 -->
+
+</body>
+<script type="text/javascript">
+
+    var jobVue;
+    $(function () {
+        $.ajax({
+            type: "post",
+            url: 'http://192.168.1.104:8086/job/findPagel',
+            data: '',
+            success: function (res) {
+                jobVue = new Vue({
+                    el: '#jobList',
+                    data: {
+                        jobList: res
+                    },
+                    methods: {
+                        del: function (id) {
+                            alert(id);
+                            $.ajax({
+                                url: 'http://192.168.1.104:8086/job/delJob?id=' + id,
+                                dataType: 'json',
+                                success: function () {
+                                    location = location;
+                                },
+                                error: function () {
+                                    alert("删除失败");
+                                }
+                            })
+                        }
+                    }
+                })
+            },
+            error: function () {
+                alert("失败");
+            }
+        })
+    })
+
+    $("#ButRefresh").click(function () {
+        location = location;
+    });
+</script>
+</html>
